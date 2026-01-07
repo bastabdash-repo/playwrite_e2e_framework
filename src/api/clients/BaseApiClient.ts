@@ -1,5 +1,5 @@
 import { APIRequestContext, expect } from "playwright/test";
-import env from "../../config/env.config";
+import env from "../../config/env.config.ts";
 
 export class BaseApiClient {
 

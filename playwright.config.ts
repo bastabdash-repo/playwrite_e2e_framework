@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import env from "./src/config/env.config.ts"
+
 
 /**
  * Read environment variables from file.
@@ -14,6 +16,8 @@ dotenv.config();
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+
+  globalSetup: "./src/config/global-setup",
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -36,7 +40,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    baseURL: process.env.UI_BASE_URL,
+    //baseURL: process.env.UI_BASE_URL,
+
+    baseURL: env.uiBaseUrl,
   },
 
   /* Configure projects for major browsers */

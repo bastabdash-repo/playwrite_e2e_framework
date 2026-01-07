@@ -18,6 +18,7 @@
   "include": [
     "playwright.config.ts",
     "tests/**/*.ts",
-    "helpers/**/*.ts"
+    "helpers/**/*.ts",
+    "src/**/*.ts"
   ]
 }

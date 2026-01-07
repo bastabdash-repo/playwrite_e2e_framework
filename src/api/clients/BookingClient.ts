@@ -1,4 +1,4 @@
-import { BaseApiClient } from "./BaseApiClient";
+import { BaseApiClient } from "./BaseApiClient.ts";
 
 export class BookingClient extends BaseApiClient {
     createBooking(payload: any) {
