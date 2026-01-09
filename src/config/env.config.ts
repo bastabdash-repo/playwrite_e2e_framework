@@ -9,11 +9,11 @@ const envConfig: Record<EnvType, {
     apiBaseUrl: string;
 }> = {
     dev: {
-        uiBaseUrl: "https://example-dev.com",
+        uiBaseUrl: "https://playwright.dev",
         apiBaseUrl: "https://restful-booker.herokuapp.com",
     },
     qa: {
-        uiBaseUrl: "https://www.google.com/",
+        uiBaseUrl: "https://playwright.dev",
         apiBaseUrl: "https://restful-booker.herokuapp.com",
     },
     prod: {
