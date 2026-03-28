@@ -1,3 +1,4 @@
+import { expect } from "@playwright/test"
 export const bookingSchema = {
     firstname: expect.any(String),
     lastname: expect.any(String),

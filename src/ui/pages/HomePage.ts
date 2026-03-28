@@ -1,13 +1,14 @@
-import {BasePage} from "./BasePage.ts"
+import { BasePage } from "./BasePage.ts"
 
-export class HomePage extends BasePage{
+export class HomePage extends BasePage {
 
     private getStartedLink = "text=Get started";
 
-    async clickGetStarted(){
+    async clickGetStarted() {
 
         await this.page.click(this.getStartedLink);
     }
 
-    
+
 }
+

@@ -13,8 +13,10 @@ const envConfig: Record<EnvType, {
         apiBaseUrl: "https://restful-booker.herokuapp.com",
     },
     qa: {
-        uiBaseUrl: "https://playwright.dev",
+
+        uiBaseUrl: "https://restful-booker.herokuapp.com",
         apiBaseUrl: "https://restful-booker.herokuapp.com",
+
     },
     prod: {
         uiBaseUrl: "https://example.com",
