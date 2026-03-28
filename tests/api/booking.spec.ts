@@ -4,7 +4,7 @@ import { BookingClient } from "../../src/api/clients/BookingClient.ts";
 import { AuthClient } from "../../src/api/clients/AuthClient.ts";
 import { generateBookingData } from "../../src/utils/dataGenerator.ts";
 import { bookingSchema } from "../../src/api/schemas/booking.schema.ts";
-
+//
 test("Create booking, validate GET, and use token for secured flow", async ({ request }) => {
     const bookingClient = new BookingClient(request);
     const authClient = new AuthClient(request);
