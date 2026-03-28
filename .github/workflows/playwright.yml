@@ -48,7 +48,6 @@ jobs:
       - name: Run Playwright Tests
         run: npx playwright test --project=${{ matrix.browser }}
 
-      # ✅ Upload Playwright HTML report
       - name: Upload Playwright Report
         if: always()
         uses: actions/upload-artifact@v4
@@ -57,7 +56,6 @@ jobs:
           path: playwright-report/
           retention-days: 7
 
-      # ✅ Upload Allure raw results (IMPORTANT FIX)
       - name: Upload Allure Results
         if: always()
         uses: actions/upload-artifact@v4
@@ -76,28 +74,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ✅ Download ALL browser results
       - name: Download Allure Results
         uses: actions/download-artifact@v4
         with:
           path: allure-results
 
-      # ✅ Merge results (CRITICAL STEP)
+      # ✅ safer merge
       - name: Merge Allure Results
         run: |
           mkdir merged-results
-          cp -r allure-results/*/* merged-results || true
+          find allure-results -type f -name "*.json" -exec cp {} merged-results \;
 
       - name: Install Allure CLI
         run: npm install -g allure-commandline --save-dev
 
-      # ✅ Generate final report
       - name: Generate Allure Report
         run: allure generate merged-results --clean -o allure-report
 
-      # ✅ Upload final report
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: allure-report
+
+      # ✅ FIXED DEPLOY STEP (correct position)
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-report
