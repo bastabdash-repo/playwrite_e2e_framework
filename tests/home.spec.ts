@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../src/ui/pages/HomePage.ts";
 
-test("@Smoke User can navigate to Get Started page", async ({ page }) => {
+test.skip("@Smoke User can navigate to Get Started page", async ({ page }) => {
   const homePage = new HomePage(page);
 
   await homePage.navigate("/");

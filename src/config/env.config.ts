@@ -9,17 +9,15 @@ const envConfig: Record<EnvType, {
     apiBaseUrl: string;
 }> = {
     dev: {
-        uiBaseUrl: "https://playwright.dev",
+        uiBaseUrl: "https://restful-booker.herokuapp.com",
         apiBaseUrl: "https://restful-booker.herokuapp.com",
     },
     qa: {
-
-        uiBaseUrl: "https://restful-booker.herokuapp.com",
-        apiBaseUrl: "https://restful-booker.herokuapp.com",
-
+        uiBaseUrl: "https://playwright.dev",  // ✅ UI
+        apiBaseUrl: "https://restful-booker.herokuapp.com", // ✅ API
     },
     prod: {
-        uiBaseUrl: "https://example.com",
+        uiBaseUrl: "https://restful-booker.herokuapp.com",
         apiBaseUrl: "https://restful-booker.herokuapp.com",
     },
 };
