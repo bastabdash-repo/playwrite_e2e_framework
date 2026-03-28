@@ -42,4 +42,5 @@ test("Create booking, validate GET, and use token for secured flow", async ({ re
     // (Even if not updating now, this proves token flow works)
     const securedGetResponse = await bookingClient.get(`/booking/${bookingId}`, token);
     expect(securedGetResponse.status()).toBe(200);
+    
 });
