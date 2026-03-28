@@ -1,14 +1,12 @@
-import { BasePage } from "./BasePage.ts"
+import { BasePage } from "./BasePage";
 
 export class HomePage extends BasePage {
 
-    private getStartedLink = "text=Get started";
-
     async clickGetStarted() {
+        const locator = this.page.getByRole('link', { name: 'Get started' });
 
-        await this.page.click(this.getStartedLink);
+        await locator.waitFor({ state: 'visible', timeout: 10000 });
+        await locator.click();
     }
 
-
 }
-
