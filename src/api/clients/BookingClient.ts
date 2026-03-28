@@ -11,3 +11,4 @@ export class BookingClient extends BaseApiClient {
         return this.get(`/booking/${id}`);
     }
 }
+//
