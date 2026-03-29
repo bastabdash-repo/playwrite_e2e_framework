@@ -36,7 +36,7 @@ test("E2E: Create booking via API and validate via UI", async ({ request, page }
     console.log("🔍 Validating page URL...");
 
     await expect(page).toHaveURL(new RegExp(`/booking/${bookingId}`));
-  
+
 
     // 🔹 LOG 5
     console.log("🎉 E2E validation completed successfully");
@@ -46,4 +46,4 @@ test("E2E: Create booking via API and validate via UI", async ({ request, page }
   }
 });
 
-//
+console.log("testing");
