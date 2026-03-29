@@ -105,3 +105,17 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: allure-report
+  docker-test:
+    name: Run Tests via Docker
+    runs-on: ubuntu-latest
+    needs: test # optional (runs after normal tests)
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: docker build -t playwright-e2e:latest .
+
+      - name: Run Playwright Tests in Docker
+        run: docker run --rm playwright-e2e:latest
