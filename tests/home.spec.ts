@@ -17,3 +17,4 @@ test.skip("@Smoke User can navigate to Get Started page", async ({ page }) => {
 
   await expect(page.locator("h1")).toBeVisible();
 });
+//
