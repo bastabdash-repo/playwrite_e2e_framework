@@ -46,4 +46,5 @@ test("E2E: Create booking via API and validate via UI", async ({ request, page }
   }
 });
 
-console.log("testing");
+console.log("testing update");
+//
