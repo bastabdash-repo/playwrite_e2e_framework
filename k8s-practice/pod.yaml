@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: playwright-pod
+spec:
+  containers:
+  - name: playwright
+    image: bastabdash/playwright-e2e:latest
