@@ -19,6 +19,9 @@
     "playwright.config.ts",
     "tests/**/*.ts",
     "helpers/**/*.ts",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "sandbox/**/*.ts"
+
+    
   ]
 }
